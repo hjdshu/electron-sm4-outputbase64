@@ -1,0 +1,26 @@
+{
+  "name": "hello",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "author": "jake",
+  "description": "hello",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "dev": "electron .",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "less": "^3.12.2",
+    "less-loader": "^7.0.1",
+    "vue": "^2.6.11",
+    "vue-router": "^3.4.4"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "concurrently": "^5.3.0",
+    "electron": "^10.1.2"
+  }
+}
