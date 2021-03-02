@@ -1,4 +1,4 @@
-sm4加密工具（输入utf8，输出base4格式）
+## sm4加密工具（输入utf8，输出base4格式）
 #### 目前是在windows电脑上开发测试和开发的，如果是mac，需要注意外面package.json里build的配置
 
 ### 1. 开发: (开发模式只需要用到app目录就可以了)
