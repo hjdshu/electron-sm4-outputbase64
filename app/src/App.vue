@@ -42,7 +42,7 @@
     <br />
     <div>密钥生成</div>
     <button @click="createKey">点击随机生成</button>
-    <div v-if="key">{{ key }}</div>
+    <div v-if="key">{{ key }} <button @click="copyRandomKey">复制</button></div>
   </div>
 </template>
 
@@ -51,11 +51,26 @@ import { SM4 } from "gm-crypto";
 let clipboardWrite = () => {
   alert("请yarn dev 在electron环境下操作");
 };
+
+function Toast(msg,duration){
+  duration=isNaN(duration)?3000:duration;
+  var m = document.createElement('div');
+  m.innerHTML = msg;
+  m.style.cssText="max-width:60%;min-width: 150px;padding:0 14px;height: 40px;color: rgb(255, 255, 255);line-height: 40px;text-align: center;border-radius: 4px;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index: 999999;background: rgba(0, 0, 0,.7);font-size: 16px;";
+  document.body.appendChild(m);
+  setTimeout(function() {
+    var d = 0.5;
+    m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+    m.style.opacity = '0';
+    setTimeout(function() { document.body.removeChild(m) }, d * 1000);
+  }, duration);
+}
+
 if (window.electron) {
   const { clipboard } = window.electron;
   clipboardWrite = function (text) {
     clipboard.writeText(text);
-    alert("复制成功");
+    Toast("复制成功", 1000);
   };
 }
 
@@ -122,6 +137,9 @@ export default {
       } else {
         localStorage.setItem("is_save_key", true);
       }
+    },
+    copyRandomKey() {
+      clipboardWrite(this.key);
     },
   },
 };
