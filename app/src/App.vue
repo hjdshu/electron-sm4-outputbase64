@@ -33,7 +33,7 @@
     <br />
     <br />
     <div>
-      结果:<span>{{ val3 }}</span> <button @click="copy">复制</button>
+      结果:<span>{{ val3 }}</span> <button @click="copy" v-if="val3">复制</button>
     </div>
     <div>
       <button @click="encryptSensitiveData(val2)">加密</button>
@@ -75,7 +75,7 @@ export default {
   },
   methods: {
     copy() {
-      clipboardWrite(this.val);
+      clipboardWrite(this.val3);
     },
     encryptSensitiveData(raw) {
       try {
