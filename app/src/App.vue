@@ -33,7 +33,7 @@
     <br />
     <br />
     <div>
-      结果:<span>{{ val3 }}</span>
+      结果:<span>{{ val3 }}</span> <button @click="copy">复制</button>
     </div>
     <div>
       <button @click="encryptSensitiveData(val2)">加密</button>
