@@ -2,15 +2,13 @@
   "devDependencies": {
     "electron-builder": "^22.8.1"
   },
-  "author": "jake",
+  "author": "Jake",
   "scripts": {
-    "build": "node ./build-app.js",
-    "pag": "electron-builder",
-    "app": "yarn build && electron-builder",
+    "app": "electron-builder",
     "appmac": "electron-builder --mac"
   },
   "build": {
-    "productName": "sm4(base64)加解密",
+    "productName": "SM4(BASE64)tool",
     "appId": "electron hello xxx",
     "electronVersion": "10.1.2",
     "directories": {

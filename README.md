@@ -11,6 +11,9 @@ yarn dev
 
 ### 2. 打包：（在最外层目录）
 ```
+cd app
+yarn yarn build
+cd ../
 yarn 
 yarn app
 ```
